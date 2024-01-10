@@ -1,0 +1,9 @@
+data/01_Insectarium_hybrids
+data/02_BOLD
+data/03_Species_Fastas
+data/04_Alignments
+data/05_Consensus
+data/06_Paired_Fastas
+data/07_Paired_Alignments
+
+old_bin/

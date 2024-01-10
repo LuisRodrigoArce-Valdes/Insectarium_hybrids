@@ -1,0 +1,2 @@
+See "../data/02_BOLD/missings.txt" for species not found in the BOLD database.
+I have revised the names of these spp for synonims or typos and they are fine. They don't appear on BOLD.

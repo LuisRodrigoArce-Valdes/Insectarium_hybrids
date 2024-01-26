@@ -7,3 +7,4 @@ data/06_Paired_Fastas
 data/07_Paired_Alignments
 
 old_bin/
+.Rproj.user

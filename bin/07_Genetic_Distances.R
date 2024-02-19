@@ -77,15 +77,22 @@ insectarium[insectarium=="FALSE"] <- "No"
 write.table(insectarium, "../results/01_Genetic_Distances.tsv", sep = "\t", quote = F, row.names = F)
 
 # Plotting
-pdf("../results/02_MontrealInsectarium.pdf", width = 10, height = 7)
 ggplot(insectarium) +
   geom_violin(aes(y=Distance, x=Genus)) +
-  geom_point(aes(y=Distance, x=Genus, color = hybrid, shape = barriers)) +
+  geom_point(aes(y=Distance, x=Genus, color = hybrid, shape = barriers), size = 3, alpha = 0.75) +
   scale_color_manual(values = c("black","red")) +
-  scale_shape_manual(values = c(16, 4)) +
+  scale_shape_manual(values = c(16, 17)) +
   labs(y="Genetic distance (% COI substitutions)", color = "Record of hybridization?", shape = "Reproductive barriers measurements") +
   theme_classic() +
   theme(legend.position = "bottom",
+        text = element_text(family = "serif", size = 14),
         axis.text.x = element_text(face = "italic"),
-        axis.title.x = element_blank())
+        axis.title.x = element_blank()) -> p
+
+pdf("../results/02_MontrealInsectarium.pdf", width = 10, height = 7)
+p
+dev.off()
+
+png("../results/02_MontrealInsectarium.png", width = 10, height = 7, units = "in", res = 300)
+p
 dev.off()
